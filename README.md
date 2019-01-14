@@ -1,3 +1,31 @@
+## Installation dependencies
+
+To set up your python environment to run the code in this repository, follow the instructions below.
+
+1. Create (and activate) a new environment with Python 3.6.
+
+```bash
+conda update conda
+conda create --name drlnd python=3.6 
+source activate drlnd (Or just activate drlnd for windows 10)
+```
+        
+2. Set up dependency for gym and pytorch
+```bash
+git clone https://github.com/openai/gym.git
+cd gym/
+pip install -e .
+pip install -e .[classic_control]
+conda install -c pytorch pytorch==0.4.0
+```
+        
+3. Clone the repository (if you haven't already!), and navigate to the `python/` folder.  Then, install several dependencies.
+```bash
+git clone "URL of this repository"
+cd Collab-Compet/python
+pip install .
+```
+
 [//]: # (Image References)
 
 [image1]: https://user-images.githubusercontent.com/10624937/42135623-e770e354-7d12-11e8-998d-29fc74429ca2.gif "Trained Agent"
