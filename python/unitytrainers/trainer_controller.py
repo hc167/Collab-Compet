@@ -241,7 +241,7 @@ class TrainerController(object):
                 for brain_name, trainer in self.trainers.items():
                     trainer.write_tensorboard_text('Hyperparameters', trainer.parameters)
             try:
-                while any([t.get_step <= t.get_max_steps for k, t in self.trainers.items()]) or not self.train_model:
+                while any(t.get_step <= t.get_max_steps for k, t in self.trainers.items()) or not self.train_model:
                     if self.env.global_done:
                         self.env.curriculum.increment_lesson(self._get_progress())
                         curr_info = self.env.reset(train_mode=self.fast_simulation)
