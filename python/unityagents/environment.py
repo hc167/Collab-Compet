@@ -451,7 +451,7 @@ class UnityEnvironment(object):
             if len(agent_info_list) == 0:
                 memory_size = 0
             else:
-                memory_size = max([len(x.memories) for x in agent_info_list])
+                memory_size = max(len(x.memories) for x in agent_info_list)
             if memory_size == 0:
                 memory = np.zeros((0, 0))
             else:
